@@ -5,7 +5,7 @@
 ## Build generated
 build/
 DerivedData/
-
+orderMe.xcodeproj*
 ## Various settings
 *.pbxuser
 !default.pbxuser
