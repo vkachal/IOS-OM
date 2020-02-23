@@ -23,24 +23,26 @@ class OrderMEUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testBringMenu() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-        app.buttons["loginLaterButton"].tap()
-        app.tables.staticTexts["Hakkasan"].tap()
         
-        let collectionViewsQuery = app.collectionViews
-        collectionViewsQuery.cells["Detect table"].staticTexts["Detect table"].tap()
-        app.textFields["tableNumberTextField"].tap()
-        app.textFields["tableNumberTextField"].typeText("3")
-        app.buttons["Select table"].tap()
+        let loginScreen = LoginScreen()
+        let restListScreen = loginScreen.tapOnLoginLaterButton()
+        let restDetailsScreen = restListScreen.tapOnHakkasanRest()
+        restDetailsScreen.tapOndetectTableButton()
         
-        collectionViewsQuery.staticTexts["Call a waiter"].tap()
-
-        app.alerts["The waiter is on his way"].scrollViews.otherElements.buttons["Bring a menu"].tap()
-        let okAlertButton = app.alerts["Got it!"].scrollViews.otherElements.buttons["OK"]
-        XCTAssertTrue(okAlertButton.waitForExistence(timeout: 5))
+        let selectTableSceen = SelectTableScreen()
+        
+        selectTableSceen.tapOnTextField()
+        selectTableSceen.typeTableNumber(number: "3")
+        selectTableSceen.tapOnSelectTableButton()
+        
+        restDetailsScreen.tapOnCallWaiterButton()
+        restDetailsScreen.tapOnBringMenuButton()
+        
+        XCTAssertTrue(restDetailsScreen.waitForGotItAlert(), "There is no Got it alart")
         
     }
 
