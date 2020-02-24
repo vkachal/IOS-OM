@@ -45,6 +45,40 @@ class OrderMEUITests: XCTestCase {
         XCTAssertTrue(restDetailsScreen.waitForGotItAlert(), "There is no Got it alart")
         
     }
+    
+    func testCallToRestaurant() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let loginScreen = LoginScreen()
+        let restListScreen = loginScreen.tapOnLoginLaterButton()
+        let restDetailsScreen = restListScreen.tapOnHakkasanRest()
+        restDetailsScreen.tapOnCallToRestaurant()
+        
+        XCTAssertEqual("Call", restDetailsScreen.callAlertButton.label, "A test in the button is not matching")
+        XCTAssertTrue(restDetailsScreen.callAlertButton.isHittable, "A button is not hittable")
+    }
+    
+    func testCallHookahMan() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let loginScreen = LoginScreen()
+        let restListScreen = loginScreen.tapOnLoginLaterButton()
+        let restDetailsScreen = restListScreen.tapOnHakkasanRest()
+        restDetailsScreen.tapOndetectTableButton()
+        
+        let selectTableSceen = SelectTableScreen()
+        
+        selectTableSceen.tapOnTextField()
+        selectTableSceen.typeTableNumber(number: "3")
+        selectTableSceen.tapOnSelectTableButton()
+        
+        restDetailsScreen.tapOnCallWaiterButton()
+        restDetailsScreen.tapOnCallHookahMan()
+        
+        XCTAssertTrue(restDetailsScreen.waitForGotItAlert(), "There is no Got it alart")
+    }
 
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
