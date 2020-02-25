@@ -45,13 +45,38 @@ class OrderMEUITests: XCTestCase {
         XCTAssertTrue(restDetailsScreen.waitForGotItAlert(), "There is no Got it alart")
         
     }
-
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+    
+    func testOderRolls () {
+        
+        let app = XCUIApplication()
+            app.launch()
+        
+        let loginScreen = LoginScreen()
+        
+        let restListScreen = loginScreen.tapOnLoginLaterButton()
+        
+        let restDetailScreen = restListScreen.tapOnHakkasanRest()
+        restDetailScreen.tapOndetectTableButton()
+        
+        let selectTableScreen = SelectTableScreen()
+        selectTableScreen.tapOnTextField()
+        selectTableScreen.typeTableNumber(number: "1")
+        selectTableScreen.tapOnSelectTableButton()
+        
+        restDetailScreen.tapOnMenuButton()
+        
+        let menuScreen = MenuScreen()
+        menuScreen.tapOnRollsButton()
+        
+        let selectOrderScreen = SelectOrderScreen()
+        selectOrderScreen.tapOnPlusRoundButton()
+        selectOrderScreen.tapOnBucketButton()
+        
+        let acceptDeleteOrderScreen = AcceptDeleteOrderScreen()
+        acceptDeleteOrderScreen.tapOnAcceptButton()
+        
+        XCTAssertTrue(acceptDeleteOrderScreen.waitForloginAlertButton(), "Login for reservation alert is not visible")
+        
 }
+        
+    }
