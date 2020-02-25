@@ -12,6 +12,7 @@ import XCTest
 class BaseScreen {
     static let app = XCUIApplication()
     static let collectionViewsQuery = app.collectionViews
+    static let tablesQuery = app.tables
     var timeout: Double = 5.0
     
     func tap(_ element: XCUIElement) {
