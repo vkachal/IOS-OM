@@ -11,10 +11,7 @@ import XCTest
 
 class DetectTableScreen {
     static let app = XCUIApplication()
-//
-//    app.textFields["tableNumberTextField"].tap()
-//    app.textFields["tableNumberTextField"].typeText("3")
-//    app.buttons["Select table"].tap()
+
     let tableNumberTextField: XCUIElement = app.textFields["tableNumberTextField"]
     let selectTable: XCUIElement = app.buttons["Select table"]
     

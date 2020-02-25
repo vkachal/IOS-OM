@@ -27,23 +27,71 @@ class OrderMEUITests: XCTestCase {
         let logInScreen = LogInScreen()
         logInScreen.tapOnLogInLaterButton()
         
-        let listRest = ListRest()
-        listRest.tapOnRomanovRest()
+        let listRestScreen = ListRestScreen()
+//        wait for rest:
+        listRestScreen.romanovRest.waitForExistence(timeout: 10)
+        listRestScreen.tapOnRomanovRest()
         
-        let optionRest = OptionRest()
-        optionRest.tapOnDetectTable()
+        let optionRestScreen = OptionRestScreen()
+        optionRestScreen.tapOnDetectTable()
         
         let detectTableScreen = DetectTableScreen()
         detectTableScreen.tapOnTableNumberTextField()
         detectTableScreen.typeInTableNumberTextField(table: "3")
         detectTableScreen.tapOnSelectTable()
+        optionRestScreen.tapOnCallWaiter()
+        optionRestScreen.bringMenuButtonOnCallWaiterPopUp.waitForExistence(timeout: 10)
+        optionRestScreen.tapOnbringMenuButtonOnCallWaiterPopUp()
+        XCTAssertTrue(optionRestScreen.gotItAlert.waitForExistence(timeout: 5), "'Get it alert' is not visible")
+        optionRestScreen.gotItAlert
+        app.alerts["Got it!"].scrollViews.otherElements.buttons["OK"].tap()
+        XCTAssertFalse(optionRestScreen.gotItAlert.waitForExistence(timeout: 5), "'Get it alert' is visible")
+
         
-        optionRest.tapCallWaiter()
+    }
+    
+    func testOceanSeafoodRestMenuOptionsClickable() {
+        let app = XCUIApplication()
+        app.launch()
+        let logInScreen = LogInScreen()
+        logInScreen.tapOnLogInLaterButton()
+        let listRestScreen = ListRestScreen()
+//        wait for rest:
+        listRestScreen.oceanSeafoodRest.waitForExistence(timeout: 10)
+        listRestScreen.tapOnOceanSeafoodRest()
         
-        app.alerts["The waiter is on his way"].scrollViews.otherElements.buttons["Bring a menu"].tap()
-        XCTAssertTrue(optionRest.gotItAlert.waitForExistence(timeout: 5), "Get it alert is not visible")
+        let optionRestScreen = OptionRestScreen()
+        optionRestScreen.tapOnMenu()
+        let menuRestScreen = MenuRestScreen()
+        menuRestScreen.tapOnOceanSeafoodMenuAppetizersOptions()
+        optionRestScreen.tapOnBackButton()
+        XCTAssertTrue(menuRestScreen.oceanSeafoodMenuAppetizersOption.waitForExistence(timeout: 5), "Appetizers option for Ocean Seafood restaurant is not visible")
+        menuRestScreen.tapOnOceanSeafoodMenuSoupOptions()
+        optionRestScreen.tapOnBackButton()
+        XCTAssertTrue(menuRestScreen.oceanSeafoodMenuSoupOption.waitForExistence(timeout: 5), "Soup option for Ocean Seafood restaurant is not visible")
+        menuRestScreen.tapOnOceanSeafoodMenuShrimpOptions()
+        optionRestScreen.tapOnBackButton()
+        XCTAssertTrue(menuRestScreen.oceanSeafoodMenuShrimpOption.waitForExistence(timeout: 5), "Shrimp option for Ocean Seafood restaurant is not visible")
+        menuRestScreen.tapOnOceanSeafoodMenuBeefOptions()
+        optionRestScreen.tapOnBackButton()
+        XCTAssertTrue(menuRestScreen.oceanSeafoodMenuBeefOption.waitForExistence(timeout: 5), "Beef option for Ocean Seafood restaurant is not visible")
         
-//        app.alerts["Got it!"].scrollViews.otherElements.buttons["OK"].tap()
+    }
+    
+    func testAbleToCancelACallHakkasanRest() {
+        let app = XCUIApplication()
+        app.launch()
+        let logInScreen = LogInScreen()
+        logInScreen.tapOnLogInLaterButton()
+        let listRestScreen = ListRestScreen()
+        listRestScreen.hakkasanRest.waitForExistence(timeout: 10)
+        listRestScreen.tapOnHakkasanRest()
+        let optionRestScreen = OptionRestScreen()
+        optionRestScreen.tapOnCallHakkasan()
+        optionRestScreen.tapOnCancelCallHakkasanAlert()
+        XCTAssertFalse(optionRestScreen.cancelCallHakkasanAlert.waitForExistence(timeout: 5), "Cancel call alert (pop up) for Hakkasan restaurant is visible")
+
+        
         
     }
 }

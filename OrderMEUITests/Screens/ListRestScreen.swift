@@ -8,12 +8,23 @@
 
 import Foundation
 import XCTest
-class ListRest {
+class ListRestScreen {
     static let app = XCUIApplication()
+    let oceanSeafoodRest: XCUIElement = app.tables.staticTexts["Ocean Seafood"]
+    let hakkasanRest: XCUIElement = app.tables.staticTexts["Hakkasan"]
     let romanovRest: XCUIElement = app.tables.staticTexts["Romanov"]
+
     
     func tapOnRomanovRest() {
         romanovRest.tap()
+    }
+    
+    func tapOnOceanSeafoodRest() {
+        oceanSeafoodRest.tap()
+    }
+    
+    func tapOnHakkasanRest() {
+        hakkasanRest.tap()
     }
     
 }
