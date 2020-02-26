@@ -29,6 +29,8 @@ class RestDetailScreen: BaseScreen {
     let okAlertButton: XCUIElement = app.alerts["Got it!"].scrollViews.otherElements.buttons["OK"]
     
     let callHookahMan: XCUIElement = app.alerts["The waiter is on his way"].scrollViews.otherElements.buttons["Call a hookah man"]
+  
+    let menuButton: XCUIElement = collectionViewsQuery.cells["Menu"].otherElements.containing(.staticText, identifier: "Menu").element
     
     func tapOndetectTableButton() {
         tap(detectTableButton)
@@ -40,6 +42,9 @@ class RestDetailScreen: BaseScreen {
     
     func tapOnBringMenuButton() {
         tap(bringMenuButton)
+    }
+    func tapOnMenuButton() {
+        tap(menuButton)
     }
     
     func tapOnGotItAlert() {

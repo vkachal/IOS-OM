@@ -22,4 +22,37 @@ class OrderMEUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+
+    func testOderRolls () {
+        
+        let app = XCUIApplication()
+            app.launch()
+        
+        let loginScreen = LoginScreen()
+        
+        let restListScreen = loginScreen.tapOnLoginLaterButton()
+        
+        let restDetailScreen = restListScreen.tapOnHakkasanRest()
+        restDetailScreen.tapOndetectTableButton()
+        
+        let selectTableScreen = SelectTableScreen()
+        selectTableScreen.tapOnTextField()
+        selectTableScreen.typeTableNumber(number: "1")
+        selectTableScreen.tapOnSelectTableButton()
+        
+        restDetailScreen.tapOnMenuButton()
+        
+        let menuScreen = MenuScreen()
+        menuScreen.tapOnRollsButton()
+        
+        let selectOrderScreen = SelectOrderScreen()
+        selectOrderScreen.tapOnPlusRoundButton()
+        selectOrderScreen.tapOnBucketButton()
+        
+        let acceptDeleteOrderScreen = AcceptDeleteOrderScreen()
+        acceptDeleteOrderScreen.tapOnAcceptButton()
+        
+        XCTAssertTrue(acceptDeleteOrderScreen.waitForloginAlertButton(), "Login for reservation alert is not visible")
 }
+        
+    }
