@@ -87,11 +87,9 @@ class OrderMEUITests: XCTestCase {
         listRestScreen.hakkasanRest.waitForExistence(timeout: 10)
         listRestScreen.tapOnHakkasanRest()
         let optionRestScreen = OptionRestScreen()
+
         optionRestScreen.tapOnCallHakkasan()
         optionRestScreen.tapOnCancelCallHakkasanAlert()
-        XCTAssertFalse(optionRestScreen.cancelCallHakkasanAlert.waitForExistence(timeout: 5), "Cancel call alert (pop up) for Hakkasan restaurant is visible")
-
-        
-        
+        XCTAssertFalse(optionRestScreen.cancelCallHakkasanAlert.exists, "Cancel call alert (pop up) for Hakkasan restaurant is visible")
     }
 }
