@@ -9,11 +9,29 @@
 import Foundation
 import XCTest
 
-class LogInScreen {
-    static let app = XCUIApplication()
+class LogInScreen: BaseScreen {
+    
+    override init() {
+        super.init()
+        visibility()
+    }
+    
     let logInLaterButton: XCUIElement = app.buttons["loginLaterButton"]
     
     func tapOnLogInLaterButton() {
-        logInLaterButton.tap()
+        tap(logInLaterButton)
     }
 }
+
+
+// MARK: visibility
+extension LogInScreen {
+    
+    func visibility() {
+        guard logInLaterButton.waitForExistence(timeout: timeout) else {
+                   XCTFail("Login Screen is not visible")
+                   return
+               }
+    }
+}
+

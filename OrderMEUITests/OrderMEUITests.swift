@@ -26,15 +26,13 @@ class OrderMEUITests: XCTestCase {
         
         let logInScreen = LogInScreen()
         logInScreen.tapOnLogInLaterButton()
-        
+    
         let listRestScreen = ListRestScreen()
-//        wait for rest:
-        listRestScreen.romanovRest.waitForExistence(timeout: 10)
         listRestScreen.tapOnRomanovRest()
-        
+
         let optionRestScreen = OptionRestScreen()
         optionRestScreen.tapOnDetectTable()
-        
+
         let detectTableScreen = DetectTableScreen()
         detectTableScreen.tapOnTableNumberTextField()
         detectTableScreen.typeInTableNumberTextField(table: "3")
@@ -46,9 +44,7 @@ class OrderMEUITests: XCTestCase {
         optionRestScreen.gotItAlert
         app.alerts["Got it!"].scrollViews.otherElements.buttons["OK"].tap()
         XCTAssertFalse(optionRestScreen.gotItAlert.waitForExistence(timeout: 5), "'Get it alert' is visible")
-
-        
-    }
+}
     
     func testOceanSeafoodRestMenuOptionsClickable() {
         let app = XCUIApplication()

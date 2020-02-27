@@ -8,13 +8,18 @@
 
 import Foundation
 import XCTest
-class ListRestScreen {
-    static let app = XCUIApplication()
+
+class ListRestScreen: BaseScreen {
+    
+    override init() {
+        super.init()
+        visibility()
+    }
+    
     let oceanSeafoodRest: XCUIElement = app.tables.staticTexts["Ocean Seafood"]
     let hakkasanRest: XCUIElement = app.tables.staticTexts["Hakkasan"]
     let romanovRest: XCUIElement = app.tables.staticTexts["Romanov"]
 
-    
     func tapOnRomanovRest() {
         romanovRest.tap()
     }
@@ -27,4 +32,16 @@ class ListRestScreen {
         hakkasanRest.tap()
     }
     
+}
+
+// MARK: visibility
+
+extension ListRestScreen {
+    
+    func visibility() {
+        guard hakkasanRest.waitForExistence(timeout: 10) else {
+                   XCTFail("ListRest Screen is not visible")
+                   return
+               }
+    }
 }

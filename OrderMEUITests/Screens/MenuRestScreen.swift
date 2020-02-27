@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-class MenuRestScreen{
+class MenuRestScreen {
    
     static let app = XCUIApplication()
     static let collectionViewsQuery = app.collectionViews
