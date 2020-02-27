@@ -9,10 +9,7 @@
 import Foundation
 import XCTest
 
-class MenuRestScreen {
-   
-    static let app = XCUIApplication()
-    static let collectionViewsQuery = app.collectionViews
+class MenuRestScreen: BaseScreen {
     
 // Ocean Seafood restaurant Menu options
     let oceanSeafoodMenuAppetizersOption: XCUIElement = collectionViewsQuery.staticTexts["Appetizers"]
@@ -22,19 +19,23 @@ class MenuRestScreen {
 
 // Funcs tap on Ocean Seafood restaurant Menu options
     func tapOnOceanSeafoodMenuAppetizersOptions() {
-        oceanSeafoodMenuAppetizersOption.tap()
+        tap(oceanSeafoodMenuAppetizersOption)
     }
     
     func tapOnOceanSeafoodMenuSoupOptions() {
-        oceanSeafoodMenuSoupOption.tap()
+        tap(oceanSeafoodMenuSoupOption)
     }
     
     func tapOnOceanSeafoodMenuShrimpOptions() {
-        oceanSeafoodMenuShrimpOption.tap()
+        tap(oceanSeafoodMenuShrimpOption)
     }
     
     func tapOnOceanSeafoodMenuBeefOptions() {
-        oceanSeafoodMenuBeefOption.tap()
+        tap(oceanSeafoodMenuBeefOption)
     }
     
 }
+
+//for extention need some stable locator
+
+

@@ -12,10 +12,11 @@ import XCTest
 class BaseScreen {
     
     init() {
-        print("BASE")
+
     }
     
     static let app = XCUIApplication()
+    static let collectionViewsQuery = app.collectionViews
     let timeout: Double = 10.0
     
     func tap(_ element: XCUIElement) {

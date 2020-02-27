@@ -8,9 +8,12 @@
 
 import Foundation
 import XCTest
-class OptionRestScreen {
-    static let app = XCUIApplication()
-    static let collectionViewsQuery = app.collectionViews
+class OptionRestScreen: BaseScreen {
+    
+    override init() {
+        super.init()
+        visibility()
+    }
     
 
 // 6 var options for the each restaurant
@@ -32,40 +35,52 @@ class OptionRestScreen {
 
 // 6 tap funcs for the restaurant options
     func tapOnDetectTable() {
-        detectTable.tap()
+        tap(detectTable)
     }
     
     func tapOnCallWaiter() {
-        callWaiter.tap()
+        tap(callWaiter)
     }
     
     func tapOnMenu() {
-        menu.tap()
+        tap(menu)
     }
     
 //  Tap funcs for Call Waiter pop up
     
     func tapOnbringMenuButtonOnCallWaiterPopUp() {
-        bringMenuButtonOnCallWaiterPopUp.tap()
+        tap(bringMenuButtonOnCallWaiterPopUp)
     }
     
     func tapOnGotItAlert() {
-        gotItAlert.tap()
+        tap(gotItAlert)
     }
     
 // Back button for any screen
     func tapOnBackButton() {
-        backButton.tap()
+        tap(backButton)
     }
     
 //Call to the Restaurant
     func tapOnCallHakkasan() {
-        callHakkasan.tap()
+        tap(callHakkasan)
     }
     
 //Call to the Rastaurant alerts
     func tapOnCancelCallHakkasanAlert() {
-        cancelCallHakkasanAlert.tap()
+        tap(cancelCallHakkasanAlert)
     }
     
+}
+
+// MARK: visibility
+
+extension OptionRestScreen {
+    
+    func visibility() {
+        guard detectTable.waitForExistence(timeout: timeout) else {
+                   XCTFail("OptionRest Screen is not visible")
+                   return
+               }
+    }
 }

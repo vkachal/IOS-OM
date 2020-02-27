@@ -10,12 +10,18 @@ import Foundation
 import XCTest
 
 class DetectTableScreen: BaseScreen {
+    
+    override init() {
+        super.init()
+        visibility()
+        
+    }
 
     let tableNumberTextField: XCUIElement = app.textFields["tableNumberTextField"]
     let selectTable: XCUIElement = app.buttons["Select table"]
     
     func tapOnTableNumberTextField() {
-        tableNumberTextField.tap()
+        tap(tableNumberTextField)
     }
     
     func typeInTableNumberTextField(table: String) {
@@ -23,8 +29,20 @@ class DetectTableScreen: BaseScreen {
     }
     
     func tapOnSelectTable() {
-        selectTable.tap()
+        tap(selectTable)
     }
     
     
+}
+
+// MARK: visibility
+
+extension DetectTableScreen {
+    
+    func visibility() {
+        guard selectTable.waitForExistence(timeout: timeout) else {
+                   XCTFail("DetectTable Screen is not visible")
+                   return
+               }
+    }
 }

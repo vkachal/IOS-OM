@@ -21,15 +21,15 @@ class ListRestScreen: BaseScreen {
     let romanovRest: XCUIElement = app.tables.staticTexts["Romanov"]
 
     func tapOnRomanovRest() {
-        romanovRest.tap()
+        tap(romanovRest)
     }
     
     func tapOnOceanSeafoodRest() {
-        oceanSeafoodRest.tap()
+        tap(oceanSeafoodRest)
     }
     
     func tapOnHakkasanRest() {
-        hakkasanRest.tap()
+        tap(hakkasanRest)
     }
     
 }
@@ -39,7 +39,7 @@ class ListRestScreen: BaseScreen {
 extension ListRestScreen {
     
     func visibility() {
-        guard hakkasanRest.waitForExistence(timeout: 10) else {
+        guard hakkasanRest.waitForExistence(timeout: timeout) else {
                    XCTFail("ListRest Screen is not visible")
                    return
                }
