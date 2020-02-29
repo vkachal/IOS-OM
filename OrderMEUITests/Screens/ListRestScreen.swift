@@ -20,16 +20,25 @@ class ListRestScreen: BaseScreen {
     let hakkasanRest: XCUIElement = app.tables.staticTexts["Hakkasan"]
     let romanovRest: XCUIElement = app.tables.staticTexts["Romanov"]
 
-    func tapOnRomanovRest() {
+    func tapOnRomanovRest() -> OptionRestScreen {
         tap(romanovRest)
+        return OptionRestScreen()
     }
     
-    func tapOnOceanSeafoodRest() {
+    func tapOnOceanSeafoodRest() -> OptionRestScreen {
         tap(oceanSeafoodRest)
+        return OptionRestScreen()
     }
     
-    func tapOnHakkasanRest() {
+    func tapOnHakkasanRest() -> OptionRestScreen {
         tap(hakkasanRest)
+        return OptionRestScreen()
+    }
+    
+//wait for element
+    func waitForOceanSeafoodRest() -> Bool {
+        waitForTheElement(oceanSeafoodRest)
+        
     }
     
 }

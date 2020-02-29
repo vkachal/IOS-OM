@@ -51,7 +51,9 @@
 		43A8036F203EDF5F005C6EB6 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A8036E203EDF5F005C6EB6 /* AccessibilityIdentifiers.swift */; };
 		43B95CEC2059716B00E8C016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B95CEB2059716B00E8C016 /* LaunchScreen.storyboard */; };
 		843D74FD24075B60003352B8 /* MenuRestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D74FC24075B60003352B8 /* MenuRestScreen.swift */; };
-		C30A519A2403111F003B47F6 /* OrderMEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A51992403111F003B47F6 /* OrderMEUITests.swift */; };
+		843D74FF2409E823003352B8 /* OceanSeafoodRestMenuOptionsClickableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D74FE2409E823003352B8 /* OceanSeafoodRestMenuOptionsClickableUITests.swift */; };
+		843D7503240A6517003352B8 /* AbleToCancelACallHakkasanRestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D7502240A6517003352B8 /* AbleToCancelACallHakkasanRestUITests.swift */; };
+		843D7505240A7662003352B8 /* BringMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D7504240A7662003352B8 /* BringMenuUITests.swift */; };
 		C3D1256D2403234D00941716 /* LogInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1256C2403234D00941716 /* LogInScreen.swift */; };
 		C3D1256F2403287200941716 /* ListRestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1256E2403287200941716 /* ListRestScreen.swift */; };
 		C3D1257124032DC200941716 /* OptionRestScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1257024032DC200941716 /* OptionRestScreen.swift */; };
@@ -121,10 +123,12 @@
 		43A8036E203EDF5F005C6EB6 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccessibilityIdentifiers.swift; path = Model/AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 		43B95CEB2059716B00E8C016 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = View/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843D74FC24075B60003352B8 /* MenuRestScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuRestScreen.swift; sourceTree = "<group>"; };
+		843D74FE2409E823003352B8 /* OceanSeafoodRestMenuOptionsClickableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OceanSeafoodRestMenuOptionsClickableUITests.swift; sourceTree = "<group>"; };
+		843D7502240A6517003352B8 /* AbleToCancelACallHakkasanRestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbleToCancelACallHakkasanRestUITests.swift; sourceTree = "<group>"; };
+		843D7504240A7662003352B8 /* BringMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BringMenuUITests.swift; sourceTree = "<group>"; };
 		A02526015C2AC40E8E286088 /* Pods-orderMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-orderMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-orderMe/Pods-orderMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B2E078C118644F1F4B98483F /* Pods_OrderMEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrderMEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30A51972403111F003B47F6 /* OrderMEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderMEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C30A51992403111F003B47F6 /* OrderMEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMEUITests.swift; sourceTree = "<group>"; };
 		C30A519B2403111F003B47F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3D1256C2403234D00941716 /* LogInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreen.swift; sourceTree = "<group>"; };
 		C3D1256E2403287200941716 /* ListRestScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRestScreen.swift; sourceTree = "<group>"; };
@@ -293,8 +297,10 @@
 			isa = PBXGroup;
 			children = (
 				C3D1256B2403230400941716 /* Screens */,
-				C30A51992403111F003B47F6 /* OrderMEUITests.swift */,
 				C30A519B2403111F003B47F6 /* Info.plist */,
+				843D74FE2409E823003352B8 /* OceanSeafoodRestMenuOptionsClickableUITests.swift */,
+				843D7502240A6517003352B8 /* AbleToCancelACallHakkasanRestUITests.swift */,
+				843D7504240A7662003352B8 /* BringMenuUITests.swift */,
 			);
 			path = OrderMEUITests;
 			sourceTree = "<group>";
@@ -567,11 +573,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D12573240334B400941716 /* DetectTableScreen.swift in Sources */,
+				843D7503240A6517003352B8 /* AbleToCancelACallHakkasanRestUITests.swift in Sources */,
 				C3D1256F2403287200941716 /* ListRestScreen.swift in Sources */,
 				C3D125752407759E00941716 /* BaseScreen.swift in Sources */,
+				843D74FF2409E823003352B8 /* OceanSeafoodRestMenuOptionsClickableUITests.swift in Sources */,
 				843D74FD24075B60003352B8 /* MenuRestScreen.swift in Sources */,
+				843D7505240A7662003352B8 /* BringMenuUITests.swift in Sources */,
 				C3D1257124032DC200941716 /* OptionRestScreen.swift in Sources */,
-				C30A519A2403111F003B47F6 /* OrderMEUITests.swift in Sources */,
 				C3D1256D2403234D00941716 /* LogInScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

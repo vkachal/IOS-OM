@@ -24,15 +24,15 @@ class DetectTableScreen: BaseScreen {
         tap(tableNumberTextField)
     }
     
-    func typeInTableNumberTextField(table: String) {
+    func typeInTableNumberTextField(_ table: String) {
         type(table, to: tableNumberTextField)
     }
-    
-    func tapOnSelectTable() {
+        
+    func tapOnSelectTable() -> OptionRestScreen {
         tap(selectTable)
+        return OptionRestScreen()
     }
-    
-    
+
 }
 
 // MARK: visibility

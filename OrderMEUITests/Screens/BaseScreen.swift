@@ -17,6 +17,7 @@ class BaseScreen {
     
     static let app = XCUIApplication()
     static let collectionViewsQuery = app.collectionViews
+    
     let timeout: Double = 10.0
     
     func tap(_ element: XCUIElement) {
@@ -26,4 +27,11 @@ class BaseScreen {
     func type(_ text: String, to element: XCUIElement) {
         element.typeText(text)
     }
+    
+    func waitForTheElement(_ element: XCUIElement) {
+        element.waitForExistence(timeout: timeout)
+
+    }
+    
+
 }

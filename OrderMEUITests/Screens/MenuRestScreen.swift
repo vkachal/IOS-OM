@@ -17,6 +17,7 @@ class MenuRestScreen: BaseScreen {
     let oceanSeafoodMenuShrimpOption: XCUIElement = collectionViewsQuery.staticTexts["Shrimp"]
     let oceanSeafoodMenuBeefOption: XCUIElement = collectionViewsQuery.staticTexts["Beef"]
 
+
 // Funcs tap on Ocean Seafood restaurant Menu options
     func tapOnOceanSeafoodMenuAppetizersOptions() {
         tap(oceanSeafoodMenuAppetizersOption)
@@ -34,8 +35,26 @@ class MenuRestScreen: BaseScreen {
         tap(oceanSeafoodMenuBeefOption)
     }
     
+//wait for element
+    func waitForOceanSeafoodMenuAppetizersOptions() -> Bool {
+        waitForTheElement(oceanSeafoodMenuAppetizersOption)
+    }
+    
+    func waitForOceanSeafoodMenuSoupOptions() -> Bool {
+        waitForTheElement(oceanSeafoodMenuSoupOption)
+    }
+    
+    func waitForOceanSeafoodMenuShrimpOptions() -> Bool {
+        waitForTheElement(oceanSeafoodMenuShrimpOption)
+    }
+    
+    func waitForOceanSeafoodMenuBeefOptions() -> Bool {
+        waitForTheElement(oceanSeafoodMenuBeefOption)
+    }
+    
 }
 
 //for extention need some stable locator
+
 
 

@@ -18,9 +18,11 @@ class LogInScreen: BaseScreen {
     
     let logInLaterButton: XCUIElement = app.buttons["loginLaterButton"]
     
-    func tapOnLogInLaterButton() {
+    func tapOnLogInLaterButton() -> ListRestScreen {
         tap(logInLaterButton)
+        return ListRestScreen()
     }
+    
 }
 
 

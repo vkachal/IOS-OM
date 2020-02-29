@@ -34,21 +34,23 @@ class OptionRestScreen: BaseScreen {
     let backButton: XCUIElement = app.buttons["Back 50"]
 
 // 6 tap funcs for the restaurant options
-    func tapOnDetectTable() {
+    func tapOnDetectTable() -> DetectTableScreen {
         tap(detectTable)
+        return DetectTableScreen()
     }
     
     func tapOnCallWaiter() {
         tap(callWaiter)
     }
     
-    func tapOnMenu() {
+    func tapOnMenu() -> MenuRestScreen{
         tap(menu)
+        return MenuRestScreen()
     }
     
 //  Tap funcs for Call Waiter pop up
     
-    func tapOnbringMenuButtonOnCallWaiterPopUp() {
+    func tapOnBringMenuButtonOnCallWaiterPopUp() {
         tap(bringMenuButtonOnCallWaiterPopUp)
     }
     
@@ -71,6 +73,15 @@ class OptionRestScreen: BaseScreen {
         tap(cancelCallHakkasanAlert)
     }
     
+//Wait for the element
+    func waitForBringMenuButtonOnCallWaiterPopUp() {
+        waitForTheElement(bringMenuButtonOnCallWaiterPopUp)
+    }
+    
+    func waitForGotItAlert() -> Bool {
+        waitForTheElement(gotItAlert)
+    }
+    
 }
 
 // MARK: visibility
@@ -78,7 +89,7 @@ class OptionRestScreen: BaseScreen {
 extension OptionRestScreen {
     
     func visibility() {
-        guard detectTable.waitForExistence(timeout: timeout) else {
+        guard menu.waitForExistence(timeout: timeout) else {
                    XCTFail("OptionRest Screen is not visible")
                    return
                }
