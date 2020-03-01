@@ -23,29 +23,6 @@ class OrderMEUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testBringMenu() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        
-        let loginScreen = LoginScreen()
-        let restListScreen = loginScreen.tapOnLoginLaterButton()
-        let restDetailsScreen = restListScreen.tapOnHakkasanRest()
-        restDetailsScreen.tapOndetectTableButton()
-        
-        let selectTableSceen = SelectTableScreen()
-        
-        selectTableSceen.tapOnTextField()
-        selectTableSceen.typeTableNumber(number: "3")
-        selectTableSceen.tapOnSelectTableButton()
-        
-        restDetailsScreen.tapOnCallWaiterButton()
-        restDetailsScreen.tapOnBringMenuButton()
-        
-        XCTAssertTrue(restDetailsScreen.waitForGotItAlert(), "There is no Got it alart")
-        
-    }
-    
     func testOderRolls () {
         
         let app = XCUIApplication()
@@ -76,7 +53,6 @@ class OrderMEUITests: XCTestCase {
         acceptDeleteOrderScreen.tapOnAcceptButton()
         
         XCTAssertTrue(acceptDeleteOrderScreen.waitForloginAlertButton(), "Login for reservation alert is not visible")
-        
 }
         
     }
