@@ -9,6 +9,13 @@
 import Foundation
 import XCTest
 
+enum RestaurantOption {
+    case detectTable
+    case callAWaiter
+    case makeReservation
+    case menu
+}
+
 class RestDetailScreen: BaseScreen {
     
     override init() {
@@ -16,10 +23,24 @@ class RestDetailScreen: BaseScreen {
         visibility()
     }
     
+    func choose(option: RestaurantOption) {
+        switch option {
+        case .detectTable:
+            tapOndetectTableButton()
+        case .callAWaiter:
+            tapOnCallWaiterButton()
+        case .makeReservation:
+            tapMakeReservation()
+        case .menu:
+            tapOnMenuButton()
+        }
+    }
+    
     let detectTableButton: XCUIElement = collectionViewsQuery.cells["Detect table"].staticTexts["Detect table"]
     
     let callWaiterButton: XCUIElement = collectionViewsQuery.staticTexts["Call a waiter"]
-    
+    let reservationButton: XCUIElement = collectionViewsQuery.staticTexts["Reservation"]
+
     let bringMenuButton: XCUIElement = app.alerts["The waiter is on his way"].scrollViews.otherElements.buttons["Bring a menu"]
     
     let callToRestaurant: XCUIElement = app.collectionViews.cells["+1 415-829-8148"].otherElements.containing(.staticText, identifier:"+1 415-829-8148").element
@@ -65,6 +86,10 @@ class RestDetailScreen: BaseScreen {
     
     func tapOnCallHookahMan() {
         tap(callHookahMan)
+    }
+    
+    func tapMakeReservation() {
+        tap(reservationButton)
     }
 
 }

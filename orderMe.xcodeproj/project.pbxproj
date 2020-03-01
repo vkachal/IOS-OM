@@ -59,6 +59,13 @@
 		89B049012405C85800ACDDED /* AcceptDeleteOrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B048FE2405C85800ACDDED /* AcceptDeleteOrderScreen.swift */; };
 		89B049022405C85800ACDDED /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B048FF2405C85800ACDDED /* MenuScreen.swift */; };
 		C364EED223F3CEA4009ECF5A /* OrderMEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C364EED123F3CEA4009ECF5A /* OrderMEUITests.swift */; };
+		C3D12579240B43F700941716 /* ReservationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D12578240B43F700941716 /* ReservationTests.swift */; };
+		C3D1257D240B446900941716 /* CallToRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1257A240B446900941716 /* CallToRestaurantTests.swift */; };
+		C3D1257E240B446900941716 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1257B240B446900941716 /* PerformanceTests.swift */; };
+		C3D1257F240B446900941716 /* CallWaiterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D1257C240B446900941716 /* CallWaiterTests.swift */; };
+		C3D12581240B492900941716 /* ReservationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D12580240B492900941716 /* ReservationScreen.swift */; };
+		C3D12583240B4C4200941716 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D12582240B4C4200941716 /* Date.swift */; };
+		C3D12587240B60E900941716 /* BaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D12586240B60E900941716 /* BaseTests.swift */; };
 		E8E4BF6160F8C100D1B12500 /* Pods_orderMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAD16F67A289A8CEBEDC646 /* Pods_orderMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +142,13 @@
 		C364EECF23F3CEA4009ECF5A /* OrderMEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderMEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C364EED123F3CEA4009ECF5A /* OrderMEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMEUITests.swift; sourceTree = "<group>"; };
 		C364EED323F3CEA4009ECF5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3D12578240B43F700941716 /* ReservationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTests.swift; sourceTree = "<group>"; };
+		C3D1257A240B446900941716 /* CallToRestaurantTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallToRestaurantTests.swift; sourceTree = "<group>"; };
+		C3D1257B240B446900941716 /* PerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
+		C3D1257C240B446900941716 /* CallWaiterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallWaiterTests.swift; sourceTree = "<group>"; };
+		C3D12580240B492900941716 /* ReservationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationScreen.swift; sourceTree = "<group>"; };
+		C3D12582240B4C4200941716 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C3D12586240B60E900941716 /* BaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTests.swift; sourceTree = "<group>"; };
 		EDDBFC792085FA8700A45B71 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDBFC7B2085FA9200A45B71 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -299,11 +313,11 @@
 				89B048FE2405C85800ACDDED /* AcceptDeleteOrderScreen.swift */,
 				89B048FF2405C85800ACDDED /* MenuScreen.swift */,
 				89B048FD2405C85800ACDDED /* SelectOrderScreen.swift */,
-				89B048EE2405060600ACDDED /* BaseScreen.swift */,
 				89B048EC2405060600ACDDED /* LoginScreen.swift */,
 				89B048ED2405060600ACDDED /* RestDetailsScreen.swift */,
 				89B048EF2405060700ACDDED /* RestListScreeen.swift */,
 				89B048F02405060700ACDDED /* SelectTableScreen.swift */,
+				C3D12580240B492900941716 /* ReservationScreen.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -311,11 +325,34 @@
 		C364EED023F3CEA4009ECF5A /* OrderMEUITests */ = {
 			isa = PBXGroup;
 			children = (
+				C3D12585240B5EC900941716 /* Utility */,
+				C3D12584240B5E7A00941716 /* Tests */,
 				89B048EB2405059000ACDDED /* Screens */,
-				C364EED123F3CEA4009ECF5A /* OrderMEUITests.swift */,
 				C364EED323F3CEA4009ECF5A /* Info.plist */,
 			);
 			path = OrderMEUITests;
+			sourceTree = "<group>";
+		};
+		C3D12584240B5E7A00941716 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C3D1257A240B446900941716 /* CallToRestaurantTests.swift */,
+				C3D1257C240B446900941716 /* CallWaiterTests.swift */,
+				C3D1257B240B446900941716 /* PerformanceTests.swift */,
+				C364EED123F3CEA4009ECF5A /* OrderMEUITests.swift */,
+				C3D12578240B43F700941716 /* ReservationTests.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		C3D12585240B5EC900941716 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C3D12582240B4C4200941716 /* Date.swift */,
+				89B048EE2405060600ACDDED /* BaseScreen.swift */,
+				C3D12586240B60E900941716 /* BaseTests.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		C9DF39D983637B40F1924EE8 /* Pods */ = {
@@ -572,12 +609,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D12581240B492900941716 /* ReservationScreen.swift in Sources */,
+				C3D12583240B4C4200941716 /* Date.swift in Sources */,
 				89B049022405C85800ACDDED /* MenuScreen.swift in Sources */,
+				C3D1257D240B446900941716 /* CallToRestaurantTests.swift in Sources */,
+				C3D1257E240B446900941716 /* PerformanceTests.swift in Sources */,
 				89B048F52405060700ACDDED /* SelectTableScreen.swift in Sources */,
 				89B048F22405060700ACDDED /* RestDetailsScreen.swift in Sources */,
+				C3D1257F240B446900941716 /* CallWaiterTests.swift in Sources */,
+				C3D12587240B60E900941716 /* BaseTests.swift in Sources */,
 				89B048F42405060700ACDDED /* RestListScreeen.swift in Sources */,
 				89B049002405C85800ACDDED /* SelectOrderScreen.swift in Sources */,
 				C364EED223F3CEA4009ECF5A /* OrderMEUITests.swift in Sources */,
+				C3D12579240B43F700941716 /* ReservationTests.swift in Sources */,
 				89B049012405C85800ACDDED /* AcceptDeleteOrderScreen.swift in Sources */,
 				89B048F32405060700ACDDED /* BaseScreen.swift in Sources */,
 				89B048F12405060700ACDDED /* LoginScreen.swift in Sources */,

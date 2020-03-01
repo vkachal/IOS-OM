@@ -8,13 +8,9 @@
 
 import XCTest
 
-class CallWaiterTests: XCTestCase {
+class CallWaiterTests: BaseTests {
 
     func testBringMenu() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        
         let loginScreen = LoginScreen()
         let restListScreen = loginScreen.tapOnLoginLaterButton()
         let restDetailsScreen = restListScreen.tapOnHakkasanRest()
@@ -26,7 +22,7 @@ class CallWaiterTests: XCTestCase {
         selectTableSceen.typeTableNumber(number: "3")
         selectTableSceen.tapOnSelectTableButton()
         
-        restDetailsScreen.tapOnCallWaiterButton()
+        restDetailsScreen.choose(option: .callAWaiter)
         restDetailsScreen.tapOnBringMenuButton()
         
         XCTAssertTrue(restDetailsScreen.waitForGotItAlert(), "There is no Got it alart")
@@ -34,9 +30,6 @@ class CallWaiterTests: XCTestCase {
     }
     
     func testCallHookahMan() {
-        let app = XCUIApplication()
-        app.launch()
-        
         let loginScreen = LoginScreen()
         let restListScreen = loginScreen.tapOnLoginLaterButton()
         let restDetailsScreen = restListScreen.tapOnHakkasanRest()
@@ -54,4 +47,3 @@ class CallWaiterTests: XCTestCase {
         XCTAssertTrue(restDetailsScreen.waitForGotItAlert(), "There is no Got it alart")
     }
 }
-
