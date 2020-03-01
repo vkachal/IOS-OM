@@ -8,11 +8,9 @@
 
 import XCTest
 
-class CallToRestaurantTests: XCTestCase {
+class CallToRestaurantTests: BaseTests {
     
     func testCallToRestaurant() {
-        let app = XCUIApplication()
-        app.launch()
         
         let loginScreen = LoginScreen()
         let restListScreen = loginScreen.tapOnLoginLaterButton()
