@@ -9,11 +9,31 @@
 import Foundation
 import XCTest
 
+enum restaurantOption {
+    case detectTable
+    case callAWaiter
+    case menu
+    case makeReservation
+}
+
 class RestDetailScreen: BaseScreen {
     
     override init() {
         super.init()
         visibility()
+    }
+    
+    func choose(option: restaurantOption){
+        switch option {
+        case .detectTable:
+            tapOndetectTableButton()
+        case .callAWaiter:
+            tapOnCallWaiterButton()
+        case .menu:
+            tapOnMenuButton()
+        case .makeReservation:
+            tapOnReservationButton()
+        }
     }
     
     let detectTableButton: XCUIElement = collectionViewsQuery.cells["Detect table"].staticTexts["Detect table"]
@@ -31,6 +51,8 @@ class RestDetailScreen: BaseScreen {
     let callHookahMan: XCUIElement = app.alerts["The waiter is on his way"].scrollViews.otherElements.buttons["Call a hookah man"]
   
     let menuButton: XCUIElement = collectionViewsQuery.cells["Menu"].otherElements.containing(.staticText, identifier: "Menu").element
+    
+    let reservationButton: XCUIElement = collectionViewsQuery.staticTexts["Reservation"]
     
     func tapOndetectTableButton() {
         tap(detectTableButton)
@@ -66,7 +88,10 @@ class RestDetailScreen: BaseScreen {
     func tapOnCallHookahMan() {
         tap(callHookahMan)
     }
-
+    
+    func tapOnReservationButton(){
+        tap(reservationButton)
+    }
 }
 
 // MARK: visibility
