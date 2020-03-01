@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110541F9240227DE006DBA98 /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110541F8240227DE006DBA98 /* BaseScreen.swift */; };
+		110541FB2402288A006DBA98 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110541FA2402288A006DBA98 /* LoginScreen.swift */; };
+		110541FD240229EC006DBA98 /* RestListScreeen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110541FC240229EC006DBA98 /* RestListScreeen.swift */; };
+		110541FF24022B1F006DBA98 /* RestDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110541FE24022B1F006DBA98 /* RestDetailsScreen.swift */; };
+		1105420124022C50006DBA98 /* SelectTableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105420024022C50006DBA98 /* SelectTableScreen.swift */; };
+		110542052405B407006DBA98 /* CallWaiterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110542042405B407006DBA98 /* CallWaiterTests.swift */; };
+		110542072405B55C006DBA98 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110542062405B55C006DBA98 /* PerformanceTests.swift */; };
+		110542092405B75C006DBA98 /* CallToRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110542082405B75C006DBA98 /* CallToRestaurantTests.swift */; };
+		1105420B24063596006DBA98 /* SelectOrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105420A24063596006DBA98 /* SelectOrderScreen.swift */; };
+		1105420D240635A0006DBA98 /* MenuScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105420C240635A0006DBA98 /* MenuScreen.swift */; };
+		1105420F240635AB006DBA98 /* AcceptDeleteOrderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105420E240635AB006DBA98 /* AcceptDeleteOrderScreen.swift */; };
 		2B13B0281E064472004A09D2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13B0271E064472004A09D2 /* Menu.swift */; };
 		2B2EA7911CBB03D6001507DD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EA7821CBB03D6001507DD /* CategoryCell.swift */; };
 		2B2EA7921CBB03D6001507DD /* PlaceMainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2EA7831CBB03D6001507DD /* PlaceMainMenuController.swift */; };
@@ -66,6 +77,17 @@
 
 /* Begin PBXFileReference section */
 		0A1E6C06FD11E1DB88A716D9 /* Pods-OrderMEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderMEUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrderMEUITests/Pods-OrderMEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		110541F8240227DE006DBA98 /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
+		110541FA2402288A006DBA98 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		110541FC240229EC006DBA98 /* RestListScreeen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestListScreeen.swift; sourceTree = "<group>"; };
+		110541FE24022B1F006DBA98 /* RestDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestDetailsScreen.swift; sourceTree = "<group>"; };
+		1105420024022C50006DBA98 /* SelectTableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTableScreen.swift; sourceTree = "<group>"; };
+		110542042405B407006DBA98 /* CallWaiterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallWaiterTests.swift; sourceTree = "<group>"; };
+		110542062405B55C006DBA98 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
+		110542082405B75C006DBA98 /* CallToRestaurantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToRestaurantTests.swift; sourceTree = "<group>"; };
+		1105420A24063596006DBA98 /* SelectOrderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectOrderScreen.swift; sourceTree = "<group>"; };
+		1105420C240635A0006DBA98 /* MenuScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScreen.swift; sourceTree = "<group>"; };
+		1105420E240635AB006DBA98 /* AcceptDeleteOrderScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptDeleteOrderScreen.swift; sourceTree = "<group>"; };
 		1976FAADE5304B218A816420 /* Pods-OrderMEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrderMEUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrderMEUITests/Pods-OrderMEUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1BAD16F67A289A8CEBEDC646 /* Pods_orderMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_orderMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1C0503B5E49B7148C83F5D /* Pods-orderMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-orderMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-orderMe/Pods-orderMe.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +164,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110541F7240227BE006DBA98 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1105420E240635AB006DBA98 /* AcceptDeleteOrderScreen.swift */,
+				1105420C240635A0006DBA98 /* MenuScreen.swift */,
+				1105420A24063596006DBA98 /* SelectOrderScreen.swift */,
+				110541F8240227DE006DBA98 /* BaseScreen.swift */,
+				110541FA2402288A006DBA98 /* LoginScreen.swift */,
+				110541FC240229EC006DBA98 /* RestListScreeen.swift */,
+				110541FE24022B1F006DBA98 /* RestDetailsScreen.swift */,
+				1105420024022C50006DBA98 /* SelectTableScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		2B09DF341E2849D700EF2BEF /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,7 +317,11 @@
 		C364EED023F3CEA4009ECF5A /* OrderMEUITests */ = {
 			isa = PBXGroup;
 			children = (
+				110541F7240227BE006DBA98 /* Screens */,
 				C364EED123F3CEA4009ECF5A /* OrderMEUITests.swift */,
+				110542062405B55C006DBA98 /* PerformanceTests.swift */,
+				110542042405B407006DBA98 /* CallWaiterTests.swift */,
+				110542082405B75C006DBA98 /* CallToRestaurantTests.swift */,
 				C364EED323F3CEA4009ECF5A /* Info.plist */,
 			);
 			path = OrderMEUITests;
@@ -540,7 +581,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110542092405B75C006DBA98 /* CallToRestaurantTests.swift in Sources */,
+				1105420124022C50006DBA98 /* SelectTableScreen.swift in Sources */,
+				1105420D240635A0006DBA98 /* MenuScreen.swift in Sources */,
+				110542052405B407006DBA98 /* CallWaiterTests.swift in Sources */,
+				110541F9240227DE006DBA98 /* BaseScreen.swift in Sources */,
+				1105420B24063596006DBA98 /* SelectOrderScreen.swift in Sources */,
 				C364EED223F3CEA4009ECF5A /* OrderMEUITests.swift in Sources */,
+				110541FF24022B1F006DBA98 /* RestDetailsScreen.swift in Sources */,
+				110541FB2402288A006DBA98 /* LoginScreen.swift in Sources */,
+				110542072405B55C006DBA98 /* PerformanceTests.swift in Sources */,
+				110541FD240229EC006DBA98 /* RestListScreeen.swift in Sources */,
+				1105420F240635AB006DBA98 /* AcceptDeleteOrderScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
