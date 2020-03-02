@@ -4,7 +4,7 @@
 //
 //  Created by Admin on 2/28/20.
 //  Copyright © 2020 Boris Gurtovoy. All rights reserved.
-//
+// swiftlint:disable:next line_length
 
 import XCTest
 
@@ -19,8 +19,6 @@ class OceanSeafoodRestMenuOptionsClickableUITests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    
-    
     func testOceanSeafoodRestMenuOptionsClickable() {
         let app = XCUIApplication()
         app.launch()
@@ -33,7 +31,7 @@ class OceanSeafoodRestMenuOptionsClickableUITests: XCTestCase {
         
         let optionRestScreen = listRestScreen.tapOnOceanSeafoodRest()
 //        optionRestScreen.tapOnMenu()
-        var menuRestScreen = optionRestScreen.tapOnMenu()
+        let menuRestScreen = optionRestScreen.tapOnMenu()
         menuRestScreen.tapOnOceanSeafoodMenuAppetizersOptions()
         optionRestScreen.tapOnBackButton()
         XCTAssertTrue(menuRestScreen.waitForOceanSeafoodMenuAppetizersOptions(), "Appetizers option for Ocean Seafood restaurant is not visible")

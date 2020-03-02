@@ -28,10 +28,8 @@ class BaseScreen {
         element.typeText(text)
     }
     
-    func waitForTheElement(_ element: XCUIElement) {
+    func waitForTheElement(_ element: XCUIElement) -> Bool {
         element.waitForExistence(timeout: timeout)
-
     }
     
-
 }

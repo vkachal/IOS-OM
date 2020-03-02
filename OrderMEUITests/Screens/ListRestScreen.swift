@@ -38,7 +38,6 @@ class ListRestScreen: BaseScreen {
 //wait for element
     func waitForOceanSeafoodRest() -> Bool {
         waitForTheElement(oceanSeafoodRest)
-        
     }
     
 }

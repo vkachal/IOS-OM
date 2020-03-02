@@ -74,7 +74,7 @@ class OptionRestScreen: BaseScreen {
     }
     
 //Wait for the element
-    func waitForBringMenuButtonOnCallWaiterPopUp() {
+    func waitForBringMenuButtonOnCallWaiterPopUp() -> Bool {
         waitForTheElement(bringMenuButtonOnCallWaiterPopUp)
     }
     
