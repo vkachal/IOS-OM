@@ -13,6 +13,8 @@ class BaseScreen {
     static let app = XCUIApplication()
     static let collectionViewsQuery = app.collectionViews
     static let tablesQuery = app.tables
+    static let elementsQuery = app.alerts.scrollViews.otherElements
+    
     var timeout: Double = 5.0
     
     func tap(_ element: XCUIElement) {
