@@ -33,6 +33,11 @@ class ReservationScreen: BaseScreen {
     
     let okPeopleRequestButton: XCUIElement = app.alerts["We need the number of people"].scrollViews.otherElements.buttons["OK"]
     
+    let numberOfPeopleField: XCUIElement = app.textFields["Number of people"]
+    
+    let loginAlert: XCUIElement = app.alerts["You did not login"].scrollViews.otherElements.buttons["Login"]
+    
+    let cancelButton: XCUIElement = app.alerts["You did not login"].scrollViews.otherElements.buttons["Cancel"]
     
     func selectDate(month: String, day: String, hour: Int, minutes: Int, amPm: String) {
         let monthDay = "\(month) \(day)"
@@ -66,6 +71,22 @@ class ReservationScreen: BaseScreen {
     
     func waitForPeopleRequestAlert() -> Bool {
         okPeopleRequestButton.waitForExistence(timeout: timeout)
+    }
+    
+    func tapOnNumberOfPeopleField() {
+        tap(numberOfPeopleField)
+    }
+    
+    func typeNumberOfPeople(number: String) {
+        type(number, to: numberOfPeopleField)
+    }
+    
+    func waitForLoginAlert() -> Bool {
+        loginAlert.waitForExistence(timeout: timeout)
+    }
+    
+    func tapOnCancelButton() {
+        tap(cancelButton)
     }
 }
 

@@ -30,7 +30,7 @@ class ReservationTests: BaseTests {
         let month = futerDate.month
         
         reservationScreen.selectDate(month: month, day: day, hour: 10, minutes: 30, amPm: "PM")
-
+        
     }
     
     func testReservationPhoneRequest() {
@@ -62,5 +62,64 @@ class ReservationTests: BaseTests {
         XCTAssertEqual("We need the number of people", reservationScreen.numberOfPeopleRequestMessage.label, "The message is incorrect")
         
         XCTAssertTrue(reservationScreen.waitForPeopleRequestAlert(), "There is no ok button")
+    }
+    
+    func testEndToEndReservation() {
+        let loginScreen = LoginScreen()
+        let restListScreen = loginScreen.tapOnLoginLaterButton()
+        let restDetailScreen = restListScreen.tapOnHakkasanRest()
+        restDetailScreen.choose(option: .makeReservation)
+            
+        let reservationScreen = ReservationScreen()
+        let today = Date()
+        
+        guard let futerDate = today.plus(days: 5) else {
+            XCTFail("Can not crate a date")
+            return
+        }
+        
+        let day = futerDate.day
+        let month = futerDate.month
+        
+        reservationScreen.selectDate(month: month, day: day, hour: 10, minutes: 30, amPm: "PM")
+        reservationScreen.tapOnNumberTextField()
+        reservationScreen.typeNumber(number: "4564564567")
+        reservationScreen.tapOnNumberOfPeopleField()
+        reservationScreen.typeNumberOfPeople(number: "2")
+        reservationScreen.typeNumberOfPeople(number: "\n")
+        reservationScreen.tapOnBookButton()
+        
+        XCTAssertTrue(reservationScreen.waitForLoginAlert(), "There is no login alert")
+    }
+    
+    func testCancelReservation() {
+        let loginScreen = LoginScreen()
+        let restListScreen = loginScreen.tapOnLoginLaterButton()
+        let restDetailScreen = restListScreen.tapOnHakkasanRest()
+        restDetailScreen.choose(option: .makeReservation)
+            
+        let reservationScreen = ReservationScreen()
+        let today = Date()
+        
+        guard let futerDate = today.plus(days: 5) else {
+            XCTFail("Can not crate a date")
+            return
+        }
+        
+        let day = futerDate.day
+        let month = futerDate.month
+        
+        reservationScreen.selectDate(month: month, day: day, hour: 10, minutes: 30, amPm: "PM")
+        reservationScreen.tapOnNumberTextField()
+        reservationScreen.typeNumber(number: "4564564567")
+        reservationScreen.tapOnNumberOfPeopleField()
+        reservationScreen.typeNumberOfPeople(number: "2")
+        reservationScreen.typeNumberOfPeople(number: "\n")
+        reservationScreen.tapOnBookButton()
+        
+        XCTAssertTrue(reservationScreen.waitForLoginAlert(), "There is no login alert")
+        XCTAssertTrue(reservationScreen.cancelButton.isHittable, "Cancel button is not hittable")
+        reservationScreen.tapOnCancelButton()
+        XCTAssertFalse(reservationScreen.waitForLoginAlert(), "Alert is not skipped")
     }
 }
