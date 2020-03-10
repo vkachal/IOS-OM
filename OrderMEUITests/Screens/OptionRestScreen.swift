@@ -8,11 +8,31 @@
 
 import Foundation
 import XCTest
+
+enum RestaurantOption {
+    case detectTable
+    case callAWaiter
+    case makeReservation
+    case menu
+}
 class OptionRestScreen: BaseScreen {
     
     override init() {
         super.init()
         visibility()
+    }
+    
+    func choose(option: RestaurantOption) {
+        switch option {
+        case .detectTable:
+            tapOnDetectTable()
+        case .callAWaiter:
+            tapOnCallWaiter()
+        case .makeReservation:
+            tapMakeReservation()
+        case .menu:
+            tapOnMenu()
+        }
     }
     
 
@@ -22,6 +42,7 @@ class OptionRestScreen: BaseScreen {
     let menu: XCUIElement = collectionViewsQuery.staticTexts["Menu"]
 // have to create data file with phone number for Hakkasan and other restaurant. Ask how to do it!
     let callHakkasan: XCUIElement = collectionViewsQuery.staticTexts["+1 415-829-8148"]
+    let reservationButton: XCUIElement = collectionViewsQuery.staticTexts["Reservation"]
 
 // call restaurant alerts
     let cancelCallHakkasanAlert: XCUIElement = app.alerts["Call Hakkasan"].scrollViews.otherElements.buttons["Cancel"]
@@ -43,10 +64,16 @@ class OptionRestScreen: BaseScreen {
         tap(callWaiter)
     }
     
-    func tapOnMenu() -> MenuRestScreen{
+    func tapOnMenu() -> MenuRestScreen {
         tap(menu)
         return MenuRestScreen()
     }
+    
+    func tapMakeReservation() -> ReservationScreen {
+        tap(reservationButton)
+        return ReservationScreen()
+    }
+    
     
 //  Tap funcs for Call Waiter pop up
     
@@ -80,6 +107,9 @@ class OptionRestScreen: BaseScreen {
     
     func waitForGotItAlert() -> Bool {
         waitForTheElement(gotItAlert)
+    }
+    func waitForCancelCallHakkasanAlert() -> Bool {
+        waitForTheElement(cancelCallHakkasanAlert)
     }
     
 }
